@@ -132,7 +132,7 @@ function App() {
 ```
 
 ### 7.class대신 className<br>
-> 일반 HTML에서 CSS클래스를 사용할 때는 <div class="style"></div>와 같이 class속성을 설정하지만 <br>
+> 일반 HTML에서 CSS클래스를 사용할 때는 class="styletype"과 같이 class속성을 설정하지만 <br>
 > JSX에서는 class가 아닌 className으로 설정해 주어야 한다.<br>
 ```
  <h2 className='react'>{name}</h2>
