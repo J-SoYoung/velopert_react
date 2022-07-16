@@ -112,7 +112,8 @@ MyComponent.propTypes = {
 ```
 ### propTypes를 통한 props형태 지정<br>
 > **name : propTypes.string** <br>
-> name값은 무조건 string형태로 전달해야 된다는 것을 의미한다. App컴포넌트에서 name값이 문자열이 아닌 값을 입력한다면 console창에 경고창이 출력된다<br>
+> name값은 무조건 string형태로 전달해야 된다는 것을 의미한다.<br> 
+> App컴포넌트에서 name값이 문자열이 아닌 값을 입력한다면 console창에 경고창이 출력된다<br>
 
 ### isRequired를 사용하여 필수 propTypes설정 <br>
 > **favoriteNum : PropTypes.number.isRequired**<br>
