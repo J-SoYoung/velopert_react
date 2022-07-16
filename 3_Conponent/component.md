@@ -71,8 +71,9 @@ export default MyComponent;
 > component에서 props를 조회할 때마다 props.--- 와 같이 props. 키워드를 사용한다.<br>
 > 매번 키워드를 붙여 props를 사용한다면 불편할 것이다.<br>
 > 비구조화 할당 문법을 사용해 번거롭게 키워드를 사용하지 않고 props값을 사용할 수 있다.<br>
+<br>
 
-**비구조화 할당** 
+**비구조화 할당** <br>
 객체에서 값을 추출하는 문법. = 구조분해문법 = 함수의 파라미터에서도 사용 가능하다 <br>
 - 아래와 같이 props의 값을 함수 파라미터 부분({name, children})에서 비구조화 할당으로 사용해도 되고<br>
 - 내용이 길다면 함수 파라미터로 props를 받고 , props의 내용을 비구조화 할당문법을 사용해 내부값을 추출할 수 있다<br>
@@ -101,18 +102,21 @@ export default MyComponent;
 ```
 import propTypes from 'prop-types';
 
+const MyComponent = ({name, children, favoriteNum}) => {
+  return (  ...  )
+
 MyComponent.propTypes = {
   name : propTypes.string,
   favoriteNum : PropTypes.number.isRequired
 }
 ```
 ### propTypes를 통한 props형태 지정<br>
-**name : propTypes.string** <br>
-name값은 무조건 string형태로 전달해야 된다는 것을 의미한다. App컴포넌트에서 name값이 문자열이 아닌 값을 입력한다면 console창에 경고창이 출력된다<br>
+> **name : propTypes.string** <br>
+> name값은 무조건 string형태로 전달해야 된다는 것을 의미한다. App컴포넌트에서 name값이 문자열이 아닌 값을 입력한다면 console창에 경고창이 출력된다<br>
 
 ### isRequired를 사용하여 필수 propTypes설정 <br>
-**favoriteNum : PropTypes.number.isRequired**<br>
-favoriteNum의 값은 숫자여야 하고, props로 반드시 들어가야 한다는 것을 의미한다. <br>
+> **favoriteNum : PropTypes.number.isRequired**<br>
+> favoriteNum의 값은 숫자여야 하고, props로 반드시 들어가야 한다는 것을 의미한다. <br>
 
 PropTypes의 종류는 더 많다. 101p 참고<br>
 클래스형 컴포넌트에서 props사용하기 102p 참고<br>
