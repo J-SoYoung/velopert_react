@@ -131,3 +131,5 @@ const EventPrac2= () => {
 
 export default EventPrac2;
 ```
+
+> eventPrac3_add : input, textarea, select 추가예제함
