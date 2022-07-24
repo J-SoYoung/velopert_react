@@ -12,17 +12,17 @@
 - Form
 - Mouse
 - Selection ...
-- https://ko.reactjs.org/docs/events.html#keyboard-events <br>
+- https://ko.reactjs.org/docs/events.html <br>
 <br>
 
 ### onChange이벤트 
-> 사용자가 입력한 값을 react가 핸들링 할 수 있게 하려면 state로 관리해야 한다<br>
-> input에 값이 바뀔 때마다 setMessage,setUser 상태변화 함수를 이용해서<br>
-> message, user에 입력값을 저장해줄 수 있다<br>
+> - 사용자가 입력한 값을 react가 핸들링 할 수 있게 하려면 state로 관리해야 한다<br>
+> - input에 값이 바뀔 때마다 setMessage,setUser 상태변화 함수를 이용해서<br>
+> - message, user에 입력값을 저장해줄 수 있다<br>
 <br>
 
-> onChange 이벤트를 이용하면 콜백함수를 사용할 수 있다<br>
-> input에 값을 입력하면 onChange의 이벤트객체 값(e.target.value)을 이용해 setMessage에 업데이트 시켜준다<br> 
+> - onChange 이벤트를 이용하면 콜백함수를 사용할 수 있다<br>
+> - input에 값을 입력하면 onChange의 이벤트객체 값(e.target.value)을 이용해 setMessage에 업데이트 시켜준다<br> 
 ```
 import React, {useState} from 'react';
 
@@ -75,6 +75,8 @@ export default EventPrac;
 > event객체 => e.target.name을 활용한다.<br>
 > useState는 각각의 state를 관리하는 게 아니라 두 개를 합쳐 객체로 관리할 수 있다<br>
 > state를 객체로 묶었으니 비구조화 할당을 사용하여 내부값을 바로 추출할 수 있게 해준다<br>
+<br>
+
 > **...state : 스프레드 연산자**를 사용해서 state가 가지고 있는 기본 프로퍼티들을 자동적으로 넣어준다<br>
 > 그리고 바꿀 값만 아래에 추가해 준다. <br>
 <br>
