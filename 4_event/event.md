@@ -23,6 +23,9 @@
 
 > - onChange 이벤트를 이용하면 콜백함수를 사용할 수 있다<br>
 > - input에 값을 입력하면 onChange의 이벤트객체 값(e.target.value)을 이용해 setMessage에 업데이트 시켜준다<br> 
+<br>
+
+> - onKeyPress 이벤트 : 이벤트객체의 값(e.key)을 활용하여 enter를 눌렀을 때 onClick과 같은 효과가 되로록 설정함<br>
 ```
 import React, {useState} from 'react';
 
