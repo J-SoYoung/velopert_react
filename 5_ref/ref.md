@@ -10,13 +10,14 @@
 <br>
 
 ### ref사용
-- 콜백함수를 통한 ref설정
-> ref를 달고자 하는 요소에 ref라는 콜백 함수를 props로 전달해 주면 된다.
-> 이 콜백함수는 ref값을 파라미터로 전달받고 함수 내부에서 파라미터로 받은 ref를 컴포넌트의 변수로 설정한다
+- 콜백함수를 통한 ref설정<br>
+ref를 달고자 하는 요소에 ref라는 콜백 함수를 props로 전달해 주면 된다.<br>
+이 콜백함수는 ref값을 파라미터로 전달받고 함수 내부에서 파라미터로 받은 ref를 컴포넌트의 변수로 설정한다.<br>
 <br>
 
-- createRef를 통한 ref설정
-> 컴포넌트 내부에서 객체와 연결된 변수(=멤버변수)로 React.createRef()를 담아 주저야 한다
+- createRef를 통한 ref설정<br>
+컴포넌트 내부에서 객체와 연결된 변수(=멤버변수)로 React.createRef()를 담아 주저야 한다.<br>
+<br>
 
 ### createRef, useRef
 - 클래스형 컴포넌트에서는 createRef를 사용
