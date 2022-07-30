@@ -1,16 +1,18 @@
-import './App.css';
-import EventPrac from './EventPrac';
-import EventPrac2 from './EventPrac2';
+import { Component } from 'react';
+import ScrollBox from './ScrollBox';
 
 
 
-function App() {
-  return (
-    <div className="App">
-      {/* <EventPrac/> */}
-      <EventPrac2/>
-    </div>
-  );
+
+class App extends Component {
+  render(){
+    return (
+      <div className="App">
+        <ScrollBox ref={(ref)=> this.ScrollBox = ref}/>
+        <button onClick={()=> this.ScrollBox.scrollToBottom()}>맨밑으로</button>
+      </div>
+    );
+  }
 }
 
 export default App;
