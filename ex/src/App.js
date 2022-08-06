@@ -1,18 +1,19 @@
-import { Component } from 'react';
+import { useRef } from 'react';
+import MapEx from './MapEx';
+import MemoEx from './MemoEx';
 import ScrollBox from './ScrollBox';
 
 
 
+function App() {
 
-class App extends Component {
-  render(){
-    return (
-      <div className="App">
-        <ScrollBox ref={(ref)=> this.ScrollBox = ref}/>
-        <button onClick={()=> this.ScrollBox.scrollToBottom()}>맨밑으로</button>
-      </div>
-    );
-  }
+  return (
+    <>
+      <MemoEx/>
+      <MapEx/>
+    </>
+  )
 }
 
 export default App;
+
