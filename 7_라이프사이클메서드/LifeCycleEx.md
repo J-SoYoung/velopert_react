@@ -11,6 +11,11 @@
 - 언마운트 Unmount
 <br>
 
+![1](https://user-images.githubusercontent.com/85012454/183276096-424c28a0-4840-4176-bb42-184ed5e2174c.PNG)
+
+사진출처 https://d2.naver.com/helloworld/9297403<br>
+<br>
+
 ### 마운트 Mount : DOM이 생성되고 웹브라우저상에 컴포넌트가 나타나는 것<br>
 > - **construnctor : 컴포넌트를 새로 만들 대 호출되는 클래스 생성자 메서드<br>**
 > - getDerivedStateFromProps : props를 state에 넣을 때 사용하는 메서드<br>
