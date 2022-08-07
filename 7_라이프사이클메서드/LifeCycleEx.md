@@ -28,7 +28,7 @@
 > - shouldComponentUpdate : 컴포넌트가 리렌더링 할지말지 결정하는 메서드<br>
 > - render<br>
 > - getSnapshotBeforeUpdate : 컴포넌트 변화를 DOM에 반영하기 전에 호출하는 메서드<br>
-> - **componentDidUpdate<br> : 컴포넌트의 업데이트 작업이 끝난 후 호출하는 메서드**
+> - **componentDidUpdate : 컴포넌트의 업데이트 작업이 끝난 후 호출하는 메서드**
 <br>
 
 ### 언마운트 Unmount
