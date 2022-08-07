@@ -2,7 +2,7 @@
 = 컴포넌트의 생명주기 <br>
 모든 리액트 컴포넌트는 라이프사이클(수명주기)이 존재한다.<br>
 컴포넌트의 수명은 화면에 렌더링 되기 전(준비과정)부터 시작하여 페이지에서 사라질 때 끝난다.<br>
-    ( 라이프사이클 메서드는 클래스형 컴포넌트에서 사용하고, 함수형 컴포넌트에서는 사용하지 않는다! )
+    ( 라이프사이클 메서드는 클래스형 컴포넌트에서 사용하고, 함수형 컴포넌트에서는 사용하지 않는다! )<br>
 <br>
 
 ## 컴포넌트라이프 사이클은 총 세가지로 나눈다<br>
@@ -12,10 +12,10 @@
 <br>
 
 ### 마운트 Mount : DOM이 생성되고 웹브라우저상에 컴포넌트가 나타나는 것<br>
-> **construnctor : 컴포넌트를 새로 만들 대 호출되는 클래스 생성자 메서드<br>**
-> getDerivedStateFromProps : props를 state에 넣을 때 사용하는 메서드<br>
-> **render : UI를 보여주는 메서드<br>**
-> **componentDidMount : 컴포넌트가 웹브라우저에 나타난 후 호출하는 메서드<br>**
+> - **construnctor : 컴포넌트를 새로 만들 대 호출되는 클래스 생성자 메서드<br>**
+> - getDerivedStateFromProps : props를 state에 넣을 때 사용하는 메서드<br>
+> - **render : UI를 보여주는 메서드<br>**
+> - **componentDidMount : 컴포넌트가 웹브라우저에 나타난 후 호출하는 메서드<br>**
 <br>
 
 ### 업데이트 Update <br>
@@ -24,19 +24,17 @@
 > 2. state가 바뀌는 경우<br>
 > 3. 부모 컴포넌트가 바뀌는 경우<br>
 > 4. 강제로 업데이크 시키는 경우 forceUpdate() <br>
-> GetDerivedStateFromProps<br>
-> shouldComponentUpdate : 컴포넌트가 리렌더링 할지말지 결정하는 메서드<br>
-> render<br>
-> getSnapshotBeforeUpdate : 컴포넌트 변화를 DOM에 반영하기 전에 호출하는 메서드<br>
-> **componentDidUpdate<br> : 컴포넌트의 업데이트 작업이 끝난 후 호출하는 메서드**
+> - GetDerivedStateFromProps<br>
+> - shouldComponentUpdate : 컴포넌트가 리렌더링 할지말지 결정하는 메서드<br>
+> - render<br>
+> - getSnapshotBeforeUpdate : 컴포넌트 변화를 DOM에 반영하기 전에 호출하는 메서드<br>
+> - **componentDidUpdate<br> : 컴포넌트의 업데이트 작업이 끝난 후 호출하는 메서드**
 <br>
 
 ### 언마운트 Unmount
-> 컴포넌트가 DOM에서 사라질 때
+> 컴포넌트가 DOM에서 사라질 때<br>
 > **componentWillUnmount : DOM에서 컴포넌트가 제거되기 전 호출하는 메서드**
 <br>
-
-
 
 
 ## 한줄 소감평

@@ -12,7 +12,6 @@ function App() {
 
   return (
     <div className='AppBox'>
-      
       {is_view? <h1>리액트예제</h1> : <h1>사라졌다</h1>}
       {is_view? <LifeCycleSample/> : null }
     <button onClick={()=>{setIsView(!is_view)}}>바꾸기</button>
