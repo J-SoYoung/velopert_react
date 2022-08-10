@@ -1,4 +1,5 @@
 # HOOKS(1)<br>
+
 ### useState, useEffect, useReducer<br>
 Hook은 함수 컴포넌트에서 React state와 생명주기 기능을 연동할 수 있게 해주는 함수다.<br>
 - useState : state의 상태를 관리하는 Hook<br>
@@ -32,7 +33,7 @@ const setValue = valueState[1]
   - function : 수행하고자 하는 작업
   - deps(의존배열) : 배열 형태이며, 배열 안에는 검사하고자 하는 특정값 or 빈배열이 들어간다
 
-### 마운트 될 때만 실행하고 싶을 때<br>
+**1. 마운트 될 때만 실행하고 싶을 때<br>**
 = 컴포넌트가 처음 나타날 때만 실행하고 싶을 때<br>
 함수의 두 번째 파라미터(deps)로 비어 있는 배열을 넣어주면 된다.<br>
 ```
@@ -42,7 +43,7 @@ const setValue = valueState[1]
 ```
 <br>
 
-### 배열을 생략한다면 리렌더링 될 때마다 실행된다<br>
+**2. 배열을 생략한다면 리렌더링 될 때마다 실행된다<br>**
 ```
   useEffect(()=>{
     console.log('리렌더링 될 때마다실행')
@@ -51,7 +52,7 @@ const setValue = valueState[1]
 <br>
 
 
-### 특정값이 업데이트 될 때만 실행하고 싶을 때<br>
+**3. 특정값이 업데이트 될 때만 실행하고 싶을 때<br>**
 useEffect의 두 번째 파라미터로 전달되는 배열 안에 검사하고 싶은 값을 넣어주면 된다<br>
 ```
   useEffect(()=>{
@@ -60,7 +61,7 @@ useEffect의 두 번째 파라미터로 전달되는 배열 안에 검사하고 
 ```
 <br>
 
-### 뒷정리하기 <br>
+**4. 뒷정리하기 <br>**
 > useEffect는 기본적으로 렌더링 되고 난 직후마다 실행되며, <br>
 > 두 번째 파라미터 배열에 무엇을 넣는지에 따라 실행되는 조건이 달라진다<br>
 > 컴포넌트가 언마운트 되기 전, 업데이트 전 useEffect의 cleanup함수를 반환해 주어야 한다<br>
