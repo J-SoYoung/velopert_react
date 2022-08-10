@@ -1,4 +1,6 @@
 # HOOKS(1)<br>
+https://thdud4479.tistory.com/172?category=1051245 
+
 
 ### useState, useEffect, useReducer<br>
 Hook은 함수 컴포넌트에서 React state와 생명주기 기능을 연동할 수 있게 해주는 함수다.<br>
