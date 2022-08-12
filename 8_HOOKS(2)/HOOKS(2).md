@@ -2,8 +2,8 @@
 ### useMemo, useCallback, useRef, <br>
 - useMemo : 함수 컴포넌트 내부에서 발생하는 연산을 최적화할 수 있다<br>
 - useCallback : useMemo와 비슷한 함수, 렌더링 성능을 최적화해야 하는 상황에서 사용할 수 있다.<br>
-- useRef : <br>
-
+- useRef : useRef를 통해 만든 객체 안의 current값이 실제 엘리먼트를 가리킨다. <br>
+<br>
 
 ## 8-4 useMemo<br>
 - 함수 컴포넌트 내부에서 발생하는 연산을 최적화 시키는 Hook이다. 
@@ -57,8 +57,8 @@ export default UseMemoEx;
 평균값을 계산할 때만 getAverage함수가 실행되어야 하는데, input에 값을 입력할 때도 getAverage 함수가 실행된다.<br>
 <br>
 그 이유는, <br>
-input에 onChange함수가 실행 되면 컴포넌트가 재랜더링 되면서 업데이트가 발생한다. 동시에 getAverage의 인수가 되는 list의 값이 초기화되면서 getAverag함수가 호출된다. 컴포넌트의 재랜더링이 필요할 때마다 함수가 호출되므로 이는 비효율적이다.
-<br>
+input에 onChange함수가 실행 되면 컴포넌트가 재랜더링 되면서 업데이트가 발생한다. 동시에 getAverage의 인수가 되는<br>
+list의 값이 초기화되면서 getAverag함수가 호출된다. 컴포넌트의 재랜더링이 필요할 때마다 함수가 호출되므로 이는 비효율적이다.<br>
 <br>
 
 ### useMemo를 사용하여 작업을 최적화 할 수 있다.<br>
@@ -81,6 +81,8 @@ function MyComponent({ x, y }) {
 
 !useMemo는 성능 최적화를 위해 사용할 수는 있지만, 가장 좋은 방법은 아닐 수 있음을 기억하세요!<br>
 최대한 useMemo를 사용하지 않고도 동작할 수 있도록 코드를 작성해볼 것(react.공식문서)<br>
+<br>
+<br>
 
 ## 8-5 useCallback<br>
 함수를 메모이제이션(memoization)하기 위해서 사용되는 hook 함수다.<br>
@@ -90,12 +92,15 @@ function MyComponent({ x, y }) {
 - 두번째 파라미터는 배열값을 넣는다. 어떤 값이 업데이트 되었을 때 함수를 새로 생성할지 명시해야한다<br>
 ```
 // 두번째 파라미터가 비어있다 => 컴포넌트가 렌더링 될 때 만들었던 함수를 계속 재샤용
+
 const handleOnChange = useCallback((e)=>{
   setNumber(e.target.value)
 },[])
 
+
 // 두번째 파라미터 number, list값이 들어갔다
 // 해당 값 input의 내용이 바뀌거나, list의 새로운 항목이 추가될 때 새로 만들어진 함수를 사용한다
+
 const handleOnClick = useCallback((e)=>{
   const nextList = list.concat(parseInt(number))
   setList(nextList)
@@ -133,3 +138,12 @@ const UseCallbackEx = ()=>{
   )
 }
 ```
+<br>
+
+**useRef의 바람직한 사용 사례는 다음과 같습니다.**<br>
+
+- 포커스, 텍스트 선택영역, 혹은 미디어의 재생을 관리할 때.<br>
+- 애니메이션을 직접적으로 실행시킬 때.<br>
+- 서드 파티 DOM 라이브러리를 React와 같이 사용할 때.<br>
+선언적으로 해결될 수 있는 문제에서는 ref 사용을 지양하세요.<br>
+
