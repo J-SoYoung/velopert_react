@@ -1,10 +1,5 @@
 .AppBox {
   padding: 20px;
-  border: 3px solid green;
-  margin: 20px;
-}
-.AppMini{
-  padding: 20px;
-  border: 3px solid red;
+  /* border: 3px solid green; */
   margin: 20px;
 }
