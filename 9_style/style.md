@@ -30,12 +30,13 @@ CSS를 작성할 때 가장 중요한 방법은 이름이 중복되지 않게 �
 <br>
 
 ## 9-3 CSS Module<br>
-CSS Module은 CSS를 불러와서 사용할 때 클래스 이름을 고유한 값, **[파일이름]_[클래스이름]_[해시값]** 형태로 자동으로 만들어서 컴포넌트 스타일 클래스 이름이 중첩되는 현상을 방지해 주는 기술이다.<br>
+CSS Module은 CSS를 불러와서 사용할 때 클래스 이름을 고유한 값, **[파일이름]_[클래스이름]_[해시값]** 형태로 자동으로 만들어서<br>
+컴포넌트 스타일 클래스 이름이 중첩되는 현상을 방지해 주는 기술이다.<br>
 
-### 파일이픔.module.css<br>
+### 파일이름.module.css<br>
 - **확장자를 .module.css**로 저장하면 CSS Module이 적용된다
 - 특정 클래스가 전역적으로 사용되는 경우라면 해당 클래스명 앞에 :global 을 입력하면 글로벌 CSS를 명시할 수 있다.
-- CSS Module이 적용된 class명 : CSSModule_wrapper_rCqhL<br> ( 개발자도구 element확인 가능, console.log(styles)확인 가능 )
+- CSS Module이 적용된 class명 : CSSModule_wrapper_rCqhL ( 개발자도구 element확인 가능, console.log(styles)확인 가능 )
 
 ```
 // js파일
@@ -62,16 +63,14 @@ export default CSSModule;
 :global .global_style {
   color : gray;
 }
-```
-<br>
 
-- 두 개이상의 class명을 적용할 때는 백틱(``)을 사용한다<br>
-- 배열 형태로 className을 저장해 내장함수를 이용한다<br> 
-  ( .join() => 배열의 모든 요소를 연결해 하나의 문자열로 만듦, ()의 내용을 생략하면 ,로 구분되고 (' ')면 아무 문자도 없이 연결된다)<br>
-
-```
+// 두 개이상의 class명을 적용할 때는 백틱(``)을 사용한다
 <div className={`${styles.wrapper} ${styles.free}` }>
+
+// 배열 형태로 className을 저장해 내장함수를 이용한다
 <div className={[styles.wrapper, styles.free].join(' ')}>
+
+// ( .join() => 배열의 모든 요소를 연결해 하나의 문자열로 만듦, ()의 내용을 생략하면 ,로 구분되고 (' ')면 아무 문자도 없이 연결된다)
 ```
 <br>
 
