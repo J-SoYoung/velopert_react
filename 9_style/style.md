@@ -79,57 +79,22 @@ export default CSSModule;
 ```
 yarn add styled-component
 ```
-// StyledComponent.js
+<br>
+
+### 스타일에서 props조회하기<br>
+styled-components를 사용하면 스타일 쪽에서 컴포넌트에게 전달된 props값을 참조할 수 있다.<br>
 ```
-import styled, {css} from 'styled-components'
+// JSX문법에서 color값을 props로 넣어줄 수 있다
+<Box color='black'>
 
-const StyledComponent = ()=>{
-  return (
-    <>
-      <Box color='black'>
-        <Button>안녕하세요</Button>
-        <Button inverted={true}>테두리만</Button>
-      </Box>
-    </>
-  )
-}
-
+// 전달된 props 값을 참조할 수 있다
 const Box = styled.div`
   background : ${props => props.color || 'blue'};
   padding : 20px;
   display: flex;
 `
-const Button = styled.button`
-  background : white;
-  color : black;
-  border-radius : 4px;
-  padding : 10px;
-  display : flex;
-  align-items : center;
-  justify-content : center;
-  box-sizing : border-box;
-  font-size : 20px;
-  font-weight : 600;
-
-  // &문자를 사용하여 Sass처럼 자기 자신 선택 가능
-  &:hover{
-    background : red;
-  }
-
-  // inverted값이 true일때 아래 스타일을 부여해 준다
-  ${props => props.inverted && css`
-    background : none;
-    border : 5px solid red;
-    color : red;
-    
-    &:hover {
-      background: white;
-      color : black;
-    }
-  `}
-  }
-`
-export default StyledComponent;
 ```
 <br>
 
+### props에 따른 조건부 스타일링<br>
+### 반응형 style<br>
