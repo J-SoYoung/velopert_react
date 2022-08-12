@@ -1,7 +1,7 @@
 # HOOKS(2)<br>
 ### useMemo, useCallback, useRef, <br>
 - useMemo : 함수 컴포넌트 내부에서 발생하는 연산을 최적화할 수 있다<br>
-- useCallback : <br>
+- useCallback : useMemo와 비슷한 함수, 렌더링 성능을 최적화해야 하는 상황에서 사용할 수 있다.<br>
 - useRef : <br>
 
 
@@ -83,9 +83,53 @@ function MyComponent({ x, y }) {
 최대한 useMemo를 사용하지 않고도 동작할 수 있도록 코드를 작성해볼 것(react.공식문서)<br>
 
 ## 8-5 useCallback<br>
+함수를 메모이제이션(memoization)하기 위해서 사용되는 hook 함수다.<br>
+- useCallback()을 사용하면,<br>
+  해당 컴포넌트가 랜더링되더라도 그 함수가 의존하는 값들이 바뀌지 않는 한 기존 함수를 계속해서 반환한다.<br> 
+- 첫번째 파라미터로는 생성하고 싶은 함수 넣는다<br> 
+- 두번째 파라미터는 배열값을 넣는다. 어떤 값이 업데이트 되었을 때 함수를 새로 생성할지 명시해야한다<br>
 ```
+// 두번째 파라미터가 비어있다 => 컴포넌트가 렌더링 될 때 만들었던 함수를 계속 재샤용
+const handleOnChange = useCallback((e)=>{
+  setNumber(e.target.value)
+},[])
+
+// 두번째 파라미터 number, list값이 들어갔다
+// 해당 값 input의 내용이 바뀌거나, list의 새로운 항목이 추가될 때 새로 만들어진 함수를 사용한다
+const handleOnClick = useCallback((e)=>{
+  const nextList = list.concat(parseInt(number))
+  setList(nextList)
+  setNumber('')
+}, [number,list])
 ```
 
 ## 8-6 useRef<br>
+useRef는 리렌더링을 하지 않고 컴포넌트의 속성만 조회, 수정한다<br>
+<br>
+
+### 컴포넌트에 focus를 줄 때 <br>
+- 선택하고 싶은 DOM에 속성으로 ref 값을 설정해준다.<br>
+- inputEl.current.focus();<br>
+  : Ref 객체의 current 값은 우리가 선택하고자 하는 DOM을 가리킨다.<br>
+    그리고 포커싱을 해주는 DOM API focus() 를 호출한다.<br>
 ```
+import { useState, useMemo, useCallback, useRef } from "react";
+
+const UseCallbackEx = ()=>{
+
+  const handleOnClick = useCallback((e)=>{
+    const nextList = list.concat(parseInt(number))
+    setList(nextList)
+    setNumber('')
+    inputEl.current.focus()
+  }, [number,list])
+
+  return (
+    <>
+      <h2>useCallback 예제</h2>
+      <input value={number} onChange={handleOnChange} ref={inputEl}/>
+      <button onClick={handleOnClick}>등록</button>
+    </>
+  )
+}
 ```
