@@ -15,11 +15,11 @@ const App = () => {
   const onChange = useCallback((e)=>{
     const { name, value } = e.target;
     setForm(
-      produce(draft => {
+      produce(form, draft => {
         draft[name] = value;
       })
     );
-  },[])
+  },[form])
 
   //form등록
   const onSubmit = useCallback ((e)=>{
@@ -33,7 +33,7 @@ const App = () => {
     
     //array추가
     setData(
-      produce(draft =>{
+      produce(data, draft =>{
         draft.array.push(info)
       })
     );
@@ -47,16 +47,17 @@ const App = () => {
     //id new번호
     nextId.current += 1;
 
-  },[form.name, form.username])
+  },[data, form.name, form.username])
 
   const onRemove = useCallback(
     id=> {
       setData(
-        produce(draft =>{
+        produce(data, draft =>{
           draft.array.splice(draft.array.findIndex(info => info.id === id),1)
         })
       )
-    },[])
+    }, [data]
+  )
 
   return (
     <div className='AppBox'>

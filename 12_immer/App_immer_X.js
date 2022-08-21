@@ -1,6 +1,5 @@
 import React, { useRef, useState, useCallback } from 'react';
 import './App.css'
-import produce from 'immer';
 
 const App = () => {
 
@@ -14,12 +13,11 @@ const App = () => {
   //input수정
   const onChange = useCallback((e)=>{
     const { name, value } = e.target;
-    setForm(
-      produce(draft => {
-        draft[name] = value;
-      })
-    );
-  },[])
+    setForm({
+      ...form,
+      [name]:[value]
+    });
+  },[form])
 
   //form등록
   const onSubmit = useCallback ((e)=>{
@@ -32,11 +30,10 @@ const App = () => {
     }
     
     //array추가
-    setData(
-      produce(draft =>{
-        draft.array.push(info)
-      })
-    );
+    setData({
+      ...data, 
+      array: data.array.concat(info)
+    });
 
     //form초기화
     setForm({
@@ -47,16 +44,16 @@ const App = () => {
     //id new번호
     nextId.current += 1;
 
-  },[form.name, form.username])
+  },[data, form.name, form.username])
 
   const onRemove = useCallback(
     id=> {
-      setData(
-        produce(draft =>{
-          draft.array.splice(draft.array.findIndex(info => info.id === id),1)
-        })
-      )
-    },[])
+      setData({
+        ...data,
+        array: data.array.filter(info=> info.id !== id)
+      })
+    }, [data]
+  )
 
   return (
     <div className='AppBox'>
