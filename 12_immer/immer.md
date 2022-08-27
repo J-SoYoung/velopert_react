@@ -12,7 +12,8 @@
 - produce(state, draft) 형태로 사용한다
 - 첫번째 파라미터에는 수정하고 싶은 상태,
 - 두번째 파라미터에는 어떻게 업데이트하고 싶을지 정의하는 함수를 넣어준다.
-
+<br>
+  <br>
 
 **개발자가 궁금한 사람의 블로그 Tstoyr_immer<br>**
 https://thdud4479.tistory.com/192?category=1051245<br>
