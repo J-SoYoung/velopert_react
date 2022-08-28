@@ -78,8 +78,9 @@ Route컴포넌트를 통해 라우트 설정을 해야 하며 Route컴포넌트�
 
 ## 6) 중첩된 라우트
 리액트 라우터에서 제공하는 <Outlet/> 컴포넌트 사용<br>
-Route의 children으로 들어가는 JSX 엘리먼트를 보여주는 역할을 한다.<br>
+<Outlet>컴포넌트는 Route의 children으로 들어가는 JSX 엘리먼트를 보여주는 역할을 한다.<br>
 <br>
+
 
 ## 7) 리액트 라우터 부가기능
 ### useNavigate<br>
