@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>비동기작업 - 콜백함수</h2>
+</body>
+<script>
+  function increase(number, callback){
+  setTimeout(()=> {
+    const result = number + 10;
+    if(callback){
+      callback(result)
+    }
+  }, 2000)
+}
+
+console.log('작업시작')
+increase (0, result =>{
+  console.log(result, '1번째')
+  increase(result, result=>{
+    console.log(result, '2번재')
+    increase(result, result=> {
+      console.log(result, '3번째')
+      increase(result, result=> {
+        console.log(result, '작업완료')
+      })
+    })
+  })
+})
+</script>
+</html>
+

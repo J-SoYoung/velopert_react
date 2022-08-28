@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>비동기작업 - async await</h2>
+</body>
+<script>
+  function increase(number){
+    const promise = new Promise((resolve, reject) => {
+      setTimeout(()=>{
+        const result = number + 10;
+        if( result > 50 ){
+          const e = new Error('NumberTooBig')
+          return reject(e)
+        }
+        resolve(result)
+      }, 1000)
+    })
+    return promise
+}
+
+async function runTasks(){
+  try{
+    let result = await increase(0)
+    console.log(result, '작업시작');
+    result = await increase(result)
+    console.log(result, '1번째');
+    result = await increase(result)
+    console.log(result, '2번째');
+    result = await increase(result)
+    console.log(result, '3번째');
+    result = await increase(result)
+    console.log(result, '4번째');
+    result = await increase(result)
+    console.log(result, '5번째');
+  }catch(e){
+    console.log(e)
+  }
+}
+
+runTasks()
+</script>
+</html>
+

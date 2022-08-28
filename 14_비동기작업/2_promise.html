@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>비동기작업 - promise</h2>
+</body>
+<script>
+  function increase(number){
+    const promise = new Promise((resolve, reject) => {
+      setTimeout(()=>{
+        const result = number + 10;
+        if( result > 50 ){
+          const e = new Error('NumberTooBig')
+          return reject(e)
+        }
+        resolve(result)
+      }, 1000)
+    })
+    return promise
+}
+
+increase(0)
+  .then(number=> {
+    console.log(number,'작업시작')
+    return increase(number)
+  })  
+  .then(number=> {
+    console.log(number,'1번째')
+    return increase(number)
+  })  
+  .then(number=> {
+    console.log(number,'2번째')
+    return increase(number)
+  })  
+  .then(number=> {
+    console.log(number,'3번째')
+    return increase(number)
+  })  
+  .then(number=> {
+    console.log(number,'4번째')
+    return increase(number)
+  })  
+  .then(number=> {
+    console.log(number,'5번째')
+    return increase(number)
+  })  
+  .catch(e=>{
+    console.log(e)
+  })
+</script>
+</html>
+
